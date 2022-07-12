@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import "./navigation.style.scss";
+import "./navigation.styles.scss";
 
 import { ReactComponent as CrownLogo } from "../../assets/crown.svg";
 
@@ -17,7 +17,7 @@ const Navigation = () => {
           <Link className="nav-link" to="/contact">
             CONTACT
           </Link>
-          <Link className="nav-link" to="/signIn">
+          <Link className="nav-link" to="/auth">
             SIGN IN
           </Link>
         </div>
