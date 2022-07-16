@@ -25,7 +25,7 @@ const SignUpForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(email, password);
+    console.log(email, password); // DELETE
 
     if (password !== confirmPassword) {
       alert("passwords do not match");
