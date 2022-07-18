@@ -24,6 +24,7 @@
 
   .quantity {
     display: flex;
+    line-height: 1px;
 
     .arrow {
       cursor: pointer;
@@ -31,7 +32,7 @@
 
     .value {
       margin: 0 10px;
-      padding-top: 4px;
+      line-height: 1px;
     }
   }
 
