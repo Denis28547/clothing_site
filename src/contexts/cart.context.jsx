@@ -59,14 +59,12 @@ const ACTIONS = {
 };
 
 const cartReducer = (state, action) => {
-  // console.log(state);
-  // console.log(action);
   const { type, payload } = action;
 
   switch (type) {
     case ACTIONS.SET_CART_ITEMS:
       return {
-        ...state,
+        ...state, //idk
         ...payload,
       };
     case ACTIONS.TOGGLE_CART:
@@ -115,7 +113,6 @@ export const CartProvider = ({ children }) => {
   };
 
   const setIsCartOpen = (bool) => {
-    console.log(bool);
     dispatch({ type: ACTIONS.TOGGLE_CART, payload: bool });
   };
 
