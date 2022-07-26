@@ -9,12 +9,12 @@ import "./category-page.styles.scss";
 const CategoryPage = () => {
   const { category } = useParams();
 
-  const categoriesMap = useSelector(selectCategoriesMap);
+  const categoriesArray = useSelector(selectCategoriesMap);
 
-  const [products, setProducts] = useState(categoriesMap[category]); // gets products of chosen category
+  const [products, setProducts] = useState(categoriesArray[category]); // gets products of chosen category
   useEffect(() => {
-    setProducts(categoriesMap[category]);
-  }, [category, categoriesMap]);
+    setProducts(categoriesArray[category]);
+  }, [category, categoriesArray]);
 
   return (
     <>
