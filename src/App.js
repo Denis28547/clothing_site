@@ -13,7 +13,7 @@ import Shop from "./routes/shop/shop.component.jsx";
 import Contact from "./routes/contact/contact.component.jsx";
 import Authentication from "./routes/authentication/authentication.component.jsx";
 import Checkout from "./components/checkout/checkout.component.jsx";
-import { setCurrentUser } from "./store/user/user.aciton";
+import { setCurrentUser } from "./store/user/user.action";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const App = () => {
       dispatch(setCurrentUser(user));
     });
     return unsubcribe;
-  }, []);
+  }, [dispatch]);
 
   return (
     <Routes>
