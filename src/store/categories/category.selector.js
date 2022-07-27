@@ -1,14 +1,20 @@
-export const selectCategoriesMap = (state) => {
-  // console.log(state.categories.categories);
-  return state.categories.categories.reduce((acc, category) => {
-    // console.log(acc);
-    // console.log(category);
-    const { title, items } = category;
-    // console.log(items);
-    // console.log((acc[title.toLowerCase()] = items));
-    console.log(acc);
-    acc[title.toLowerCase()] = items;
-    console.log(acc);
-    return acc;
-  }, {});
-};
+import { createSelector } from "reselect";
+
+const selectCategoryReducer = (state) => state.categories;
+
+export const selectCategories = createSelector(
+  [selectCategoryReducer], // only if selectCategoryReducer is different ( which means if categories is different ) only then it will re-run this method
+  (categorySlice) => categorySlice.categories
+);
+
+export const selectCategoriesMap = createSelector(
+  [selectCategories],
+  (categories) => {
+    console.log("selector run ");
+    return categories.reduce((acc, category) => {
+      const { title, items } = category;
+      acc[title.toLowerCase()] = items;
+      return acc;
+    }, {});
+  }
+);
