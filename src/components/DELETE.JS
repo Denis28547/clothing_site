@@ -95,6 +95,51 @@ const b = {
     },
   ],
 };
-console.log(a);
-a = { ...a, ...b };
-console.log(a);
+// console.log(a);
+// a = { ...a, ...b };
+// console.log(a);
+
+let d = [
+  {
+    id: 1,
+    price: 25,
+    imageUrl: "https://i.ibb.co/ZYW3VTp/brown-brim.png",
+    name: "Brown Brim",
+  },
+  {
+    imageUrl: "https://i.ibb.co/ypkgK0X/blue-beanie.png",
+    name: "Blue Beanie",
+    id: 2,
+    price: 18,
+  },
+  {
+    imageUrl: "https://i.ibb.co/QdJwgmp/brown-cowboy.png",
+    price: 35,
+    name: "Brown Cowboy",
+    id: 3,
+  },
+];
+
+let e = {
+  imageUrl: "https://i.ibb.co/ypkgK0X/blue-beanie.png",
+  name: "Blue Beanie",
+  id: 2,
+  price: 18,
+};
+
+let h = {
+  imageUrl: "https://i.ibb.co/QdJwgmp/brown-cowboy.png",
+  price: 35,
+  name: "Brown Cowboy",
+  id: 3,
+};
+
+let c = {};
+
+title = "nigger";
+title2 = "nigger2";
+title3 = "nigger3";
+c[title] = d;
+c[title2] = e;
+c[title3] = h;
+console.log(c[title3]);
