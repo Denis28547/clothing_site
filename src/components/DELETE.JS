@@ -142,4 +142,4 @@ title3 = "nigger3";
 c[title] = d;
 c[title2] = e;
 c[title3] = h;
-console.log(c[title3]);
+// console.log(c[title3]);
