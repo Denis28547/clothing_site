@@ -11,6 +11,8 @@ const CartDropdown = () => {
   const navigate = useNavigate();
 
   const cartItems = useSelector(selectCartItems);
+  // const checkSelector = (state) => console.log(state);
+  // const checker = useSelector(checkSelector);
 
   const goToCheckoutHandler = () => {
     navigate("/checkout");
