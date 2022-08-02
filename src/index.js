@@ -10,13 +10,11 @@ import reportWebVitals from "./reportWebVitals";
 
 import "./index.scss";
 
-import LoaderScreen from "./loaderScreen";
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   //<React.StrictMode>
   <Provider store={store}>
-    <PersistGate loading={<LoaderScreen />} persistor={persistor}>
+    <PersistGate loading={null} persistor={persistor}>
       <Router>
         <App />
       </Router>
