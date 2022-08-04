@@ -5,6 +5,7 @@ import {
   selectCartItems,
   selectCartTotal,
 } from "../../store/cart/cart.selector";
+import PaymentForm from "../payment-form/payment-form.component";
 
 import "./checkout.styles.scss";
 
@@ -41,6 +42,7 @@ const Checkout = () => {
           <div className="total">
             Total: ${cartTotal} {}
           </div>
+          <PaymentForm />
         </div>
       ) : (
         <div className="noItems">You did not add any item to the cart</div>
