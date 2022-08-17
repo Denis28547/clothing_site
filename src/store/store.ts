@@ -1,5 +1,5 @@
-import { createStore, compose, applyMiddleware } from "redux";
-import { persistStore, persistReducer } from "redux-persist";
+import { createStore, compose, applyMiddleware, Middleware } from "redux";
+import { persistStore, persistReducer, PersistConfig } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import logger from "redux-logger";
 // import thunk from "redux-thunk";
@@ -7,6 +7,16 @@ import createSagaMiddleware from "@redux-saga/core";
 import { rootSaga } from "./root-saga";
 
 import { rootReducer } from "./root-reducer";
+
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
+
+type ExtendedPersistConfig = PersistConfig<RootState> & {
+  whitelist: (keyof RootState)[];
+};
 
 // const loggerMiddleware = (store) => (next) => (action) => {  // own logger
 //   if (!action.type) {
@@ -22,7 +32,9 @@ import { rootReducer } from "./root-reducer";
 //   console.log("next state: ", store.getState());
 // };
 
-const persistConfig = {
+export type RootState = ReturnType<typeof rootReducer>;
+
+const persistConfig: ExtendedPersistConfig = {
   key: "root",
   storage,
   whitelist: ["cart"],
@@ -35,7 +47,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 const middleWares = [
   process.env.NODE_ENV !== "production" && logger,
   sagaMiddleware,
-].filter(Boolean); // it will only console log info when we're running developoment version. .filter(Boolean) will filter out if it is false
+].filter((middleWare): middleWare is Middleware => Boolean(middleWare)); // it will only console log info when we're running developoment version. .filter(Boolean) will filter out if it is false
 
 const composeEnhancer =
   (process.env.NODE_ENV !== "production" &&

@@ -231,4 +231,14 @@ const allPrice = () => {
 };
 
 // allPrice();
-console.log(allPrice());
+// console.log(allPrice());
+
+// const baa = {};
+// let caa;
+
+// baa.b = 1;
+// caa = baa;
+// caa.b = 2;
+
+// console.log(caa);
+// console.log(baa);
