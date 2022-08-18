@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux/es/exports";
 
-import Button from "../button/button.component";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import { selectCartItems } from "../../store/cart/cart.selector";
 import { addItemToCart } from "../../store/cart/cart.action";
 
@@ -22,7 +22,10 @@ const ProductCard = ({ product }) => {
         <span className="name">{name}</span>
         <span className="price">${price}</span>
       </div>
-      <Button onClick={addProductToCart} buttonType="inverted">
+      <Button
+        onClick={addProductToCart}
+        buttonType={BUTTON_TYPE_CLASSES.inverted}
+      >
         Add to cart
       </Button>
     </div>

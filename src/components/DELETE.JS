@@ -242,3 +242,9 @@ const allPrice = () => {
 
 // console.log(caa);
 // console.log(baa);
+
+const BUTTON_TYPE_CLASSES = {
+  google: "google-sign-in",
+  inverted: "inverted",
+};
+console.log(BUTTON_TYPE_CLASSES["google"]);
