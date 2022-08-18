@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import Button from "../button/button.component";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import CartItem from "../cart-item/cart-item.component";
 import { selectCartItems } from "../../store/cart/cart.selector";
 
@@ -29,7 +29,12 @@ const CartDropdown = () => {
           <span className="emtpy-message">Your cart is empty</span>
         )}
       </div>
-      <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
+      <Button
+        buttonType={BUTTON_TYPE_CLASSES.base}
+        onClick={goToCheckoutHandler}
+      >
+        GO TO CHECKOUT
+      </Button>
     </div>
   );
 };
