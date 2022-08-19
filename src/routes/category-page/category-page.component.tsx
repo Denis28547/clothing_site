@@ -11,8 +11,14 @@ import Spinner from "../../components/spinner/spinner.component";
 
 import "./category-page.styles.scss";
 
+type CategoryRouteParams = {
+  category: string;
+};
+
 const CategoryPage = () => {
-  const { category } = useParams();
+  const { category } = useParams<
+    keyof CategoryRouteParams
+  >() as CategoryRouteParams;
 
   const categoriesMap = useSelector(selectCategoriesMap);
   const isLoading = useSelector(selectCategoriesIsLoading);

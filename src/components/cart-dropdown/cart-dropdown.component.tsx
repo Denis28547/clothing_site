@@ -11,8 +11,6 @@ const CartDropdown = () => {
   const navigate = useNavigate();
 
   const cartItems = useSelector(selectCartItems);
-  // const checkSelector = (state) => console.log(state);
-  // const checker = useSelector(checkSelector);
 
   const goToCheckoutHandler = () => {
     navigate("/checkout");
@@ -30,7 +28,7 @@ const CartDropdown = () => {
         )}
       </div>
       <Button
-        buttonType={BUTTON_TYPE_CLASSES.base}
+        buttonType={BUTTON_TYPE_CLASSES.inverted}
         onClick={goToCheckoutHandler}
       >
         GO TO CHECKOUT

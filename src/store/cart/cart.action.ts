@@ -1,5 +1,5 @@
 import { CategoryItem } from "../categories/category.types";
-import { CART_ACTION_TYPES, CartItem } from "./cart.types";
+import { CART_ACTION_TYPES, TypedCartItem } from "./cart.types";
 import {
   createAction,
   withMatcher,
@@ -7,9 +7,9 @@ import {
 } from "../../utils/reducer/reducer.utils";
 
 const addCartItem = (
-  cartItems: CartItem[],
+  cartItems: TypedCartItem[],
   productToAdd: CategoryItem
-): CartItem[] => {
+): TypedCartItem[] => {
   const existingCartItem = cartItems.find(
     (cartItem) => cartItem.id === productToAdd.id
   );
@@ -25,9 +25,9 @@ const addCartItem = (
 };
 
 const decreasingQuantity = (
-  cartItems: CartItem[],
-  productToDecrease: CartItem
-): CartItem[] => {
+  cartItems: TypedCartItem[],
+  productToDecrease: TypedCartItem
+): TypedCartItem[] => {
   const itemToDecrease = cartItems.find(
     (cartItem) => cartItem.id === productToDecrease.id
   );
@@ -43,7 +43,10 @@ const decreasingQuantity = (
   );
 };
 
-const deleteCartItem = (cartItems: CartItem[], productToDelete: CartItem) => {
+const deleteCartItem = (
+  cartItems: TypedCartItem[],
+  productToDelete: TypedCartItem
+) => {
   return cartItems.filter((cartItem) => cartItem.id !== productToDelete.id);
 };
 
@@ -54,7 +57,7 @@ export type SetIsCartOpen = ActionWithPayload<
 
 export type SetCartItems = ActionWithPayload<
   CART_ACTION_TYPES.SET_CART_ITEMS,
-  CartItem[]
+  TypedCartItem[]
 >;
 
 export const setIsCartOpen = withMatcher(
@@ -63,29 +66,29 @@ export const setIsCartOpen = withMatcher(
 );
 
 export const setCartItems = withMatcher(
-  (cartItems: CartItem[]): SetCartItems =>
+  (cartItems: TypedCartItem[]): SetCartItems =>
     createAction(CART_ACTION_TYPES.SET_CART_ITEMS, cartItems)
 );
 
 export const addItemToCart = (
-  cartItems: CartItem[],
-  productToAdd: CartItem
+  cartItems: TypedCartItem[],
+  productToAdd: CategoryItem
 ) => {
   const newCartItems = addCartItem(cartItems, productToAdd);
   return setCartItems(newCartItems);
 };
 
 export const decreaseQuantity = (
-  cartItems: CartItem[],
-  productToDecrease: CartItem
+  cartItems: TypedCartItem[],
+  productToDecrease: TypedCartItem
 ) => {
   const newCartItems = decreasingQuantity(cartItems, productToDecrease);
   return setCartItems(newCartItems);
 };
 
 export const deleteItemFromCart = (
-  cartItems: CartItem[],
-  productToDelete: CartItem
+  cartItems: TypedCartItem[],
+  productToDelete: TypedCartItem
 ) => {
   const newCartItems = deleteCartItem(cartItems, productToDelete);
   return setCartItems(newCartItems);

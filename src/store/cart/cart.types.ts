@@ -7,6 +7,6 @@ export enum CART_ACTION_TYPES {
   SET_CART_TOTAL = "cart/SET_CART_TOTAL",
 }
 
-export type CartItem = CategoryItem & {
+export type TypedCartItem = CategoryItem & {
   quantity: number;
 };
