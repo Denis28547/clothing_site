@@ -2,12 +2,12 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux/es/exports";
 
-import Navigation from "./routes/navigation/navigation.component.jsx";
-import Home from "./routes/home/home.component.jsx";
-import Shop from "./routes/shop/shop.component.jsx";
-import Contact from "./routes/contact/contact.component.jsx";
-import Authentication from "./routes/authentication/authentication.component.jsx";
-import Checkout from "./components/checkout/checkout.component.jsx";
+import Navigation from "./routes/navigation/navigation.component";
+import Home from "./routes/home/home.component";
+import Shop from "./routes/shop/shop.component";
+import Contact from "./routes/contact/contact.component";
+import Authentication from "./routes/authentication/authentication.component";
+import Checkout from "./components/checkout/checkout.component";
 import { checkUserSession } from "./store/user/user.action";
 
 const App = () => {
