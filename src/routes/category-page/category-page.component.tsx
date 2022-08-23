@@ -30,7 +30,10 @@ const CategoryPage = () => {
 
   return (
     <>
-      <h2 className="category-title">{category.toUpperCase()}</h2>
+      <h2 className="category-title">
+        {category.toUpperCase()} <hr />
+      </h2>
+
       {isLoading ? (
         <Spinner />
       ) : (
