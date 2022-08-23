@@ -8,8 +8,8 @@
   cursor: pointer;
 
   .shopping-icon {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
   }
 
   .item-count {
@@ -17,5 +17,18 @@
     font-size: 10px;
     font-weight: bold;
     bottom: 12px;
+  }
+}
+
+@media (max-width: 800px) {
+  .cart-icon-container {
+    position: absolute;
+    top: 0.2rem;
+    right: 3rem;
+
+    .shopping-icon {
+      width: 35px;
+      height: 35px;
+    }
   }
 }

@@ -6,11 +6,17 @@
 
   @media screen and (max-width: 800px) {
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
   }
 }
 
 .category-title {
-  font-size: 38px;
-  margin-bottom: 25px;
+  font-size: 35px;
+  margin-bottom: 15px;
   text-align: center;
+
+  hr {
+    border: 0.1px black solid;
+    margin: 0;
+  }
 }

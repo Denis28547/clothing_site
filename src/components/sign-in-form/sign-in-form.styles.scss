@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 380px;
+  margin-bottom: 30px;
 
   h2 {
     margin: 10px 0;
@@ -10,5 +11,15 @@
   .buttons-container {
     display: flex;
     justify-content: space-between;
+  }
+
+  @media (max-width: 440px) {
+    width: auto;
+
+    .buttons-container {
+      .button {
+        width: 170px;
+      }
+    }
   }
 }
