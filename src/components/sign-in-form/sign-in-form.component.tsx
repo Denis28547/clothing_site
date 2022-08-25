@@ -68,7 +68,9 @@ const SignInForm = () => {
           required
         />
         <div className="buttons-container">
-          <Button type="submit">Sign In</Button>
+          <Button className="button" type="submit">
+            Sign In
+          </Button>
           <Button
             className="button"
             type="button"
