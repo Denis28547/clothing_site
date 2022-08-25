@@ -14,11 +14,12 @@
   }
 
   @media (max-width: 440px) {
-    width: auto;
-
+    width: 100%;
     .buttons-container {
+      justify-content: flex-start;
       .button {
-        width: 170px;
+        width: auto;
+        padding: 0 15px 0 15px;
       }
     }
   }
